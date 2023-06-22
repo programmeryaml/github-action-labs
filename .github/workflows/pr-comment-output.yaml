@@ -9,7 +9,7 @@ jobs:
       - name: write comment
         id: write_comment
         run: |
-          echo "{"stdout": "creating service Address_API%0Acreating route Address_API-get_list_address_data%0Adeleting plugin key-auth for service admin-api%0Adeleting route admin-api%0Adeleting route mock_route%0Adeleting service mock_server%0Adeleting service admin-api%0Adeleting key-auth 16b97 for consumer admin%0Adeleting consumer admin%0ASummary:%0A  Created: 2%0A  Updated: 0%0A  Deleted: 7%0A","stderr": ""}"
+          echo "{"stdout": "creating service Address_API%0Acreating route Address_API-get_list_address_data%0Adeleting plugin key-auth for service admin-api%0Adeleting route admin-api%0Adeleting route mock_route%0Adeleting service mock_server%0Adeleting service admin-api%0Adeleting key-auth 16b97 for consumer admin%0Adeleting consumer admin%0ASummary:%0A  Created: 2%0A  Updated: 0%0A  Deleted: 7%0A","stderr": ""}" >> "$GITHUB_OUTPUT"
       - uses: mshick/add-pr-comment@v2
         with:
           message: |
