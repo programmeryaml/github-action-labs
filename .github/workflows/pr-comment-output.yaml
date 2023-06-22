@@ -13,7 +13,7 @@ jobs:
       - uses: mshick/add-pr-comment@v2
         with:
           message: |
-            ${{ toJson(steps.write_comment.outputs) }}
+            ${{ steps.write_comment.outputs }}
           find: |
             \%0A\
           replace: |
