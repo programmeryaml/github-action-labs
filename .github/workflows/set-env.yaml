@@ -13,20 +13,18 @@ on:
 jobs:
   setup-environment:
     runs-on: ubuntu-latest
-    outputs:
-      environment: ${{ steps.setup-environment.outputs.setup-environment }}
     steps:
     - name: Set Environment Based on Pull Request
       id: setup-environment
       run: |
-        if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
-          echo "environment=development" >> $GITHUB_OUTPUT
-        elif [[ ${{ github.ref }} == 'refs/tags/stg-' ]]; then
-          echo "environment=staging" >> $GITHUB_OUTPUT
-        elif [[ ${{ github.ref }} == 'refs/tags/prod-' ]]; then
-          echo "environment=production" >> $GITHUB_OUTPUT
+        if [[ $github.ref == 'refs/heads/main' ]]; then
+          echo "environment=development" >> $GITHUB_ENV
+        elif [[ $github.ref == 'refs/tags/stg-' ]]; then
+          echo "environment=staging" >> $GITHUB_ENV
+        elif [[ $github.ref == 'refs/tags/prod-' ]]; then
+          echo "environment=production" >> $GITHUB_ENV
         else
-          echo "environment=default" >> $GITHUB_OUTPUT
+          echo "environment=default" >> $GITHUB_ENV
         fi
 
         echo "${{ steps.setup-environment.outputs.setup-environment }}"
