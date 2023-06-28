@@ -30,6 +30,7 @@ jobs:
             echo "environment=development" >> $GITHUB_OUTPUT
           else
             echo "environment=staging" >> $GITHUB_OUTPUT
+          fi
 
   job2:
     runs-on: ubuntu-latest
