@@ -26,7 +26,7 @@ jobs:
         run: echo "test=world" >> "$GITHUB_OUTPUT"
       - id: setup-env
         run: |
-          if [[ "${{ github.ref }}" == 'refs/heads/main' ]]; then
+          if [[ "${{ github.base_ref }}" == 'refs/heads/main' ]]; then
             echo "environment=development" >> $GITHUB_OUTPUT
           else
             echo "environment=staging" >> $GITHUB_OUTPUT
