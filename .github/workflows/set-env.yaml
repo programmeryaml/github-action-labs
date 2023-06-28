@@ -25,6 +25,8 @@ jobs:
           echo "environment=staging" >> $GITHUB_OUTPUT
         elif [[ ${{ github.ref }} == 'refs/tags/prod-' ]]; then
           echo "environment=production" >> $GITHUB_OUTPUT
+        else
+          echo "environment=default" >> $GITHUB_OUTPUT
         fi
 
         echo "${{ steps.setup-environment.outputs.setup-environment }}"
