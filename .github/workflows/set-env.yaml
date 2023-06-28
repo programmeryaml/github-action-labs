@@ -1,5 +1,4 @@
-
-name: Validate Deck
+name: Setup Environment 
 
 on:
   pull_request:
@@ -8,6 +7,7 @@ on:
     tags:
       - 'stg-*'
       - 'prod-*'
+      
   workflow_dispatch:
   
 jobs:
