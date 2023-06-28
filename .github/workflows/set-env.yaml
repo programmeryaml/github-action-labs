@@ -31,8 +31,6 @@ jobs:
           else
             echo "environment=staging" >> $GITHUB_OUTPUT
 
-          echo "${{ steps.setup-env.outputs.environment }}"
-
   job2:
     runs-on: ubuntu-latest
     needs: job1
