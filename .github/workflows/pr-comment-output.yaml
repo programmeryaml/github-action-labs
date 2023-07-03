@@ -9,11 +9,11 @@ jobs:
       - name: write comment
         id: write_comment
         run: |
-          echo "creating service Address_API%0Acreating route Address_API-get_list_address_data" >> $GITHUB_OUTPUT
+          echo "parse=creating service Address_API%0Acreating route Address_API-get_list_address_data" >> $GITHUB_OUTPUT
       - uses: mshick/add-pr-comment@v2
         with:
           message: |
-            ${{ steps.write_comment.outputs }}
+            ${{ steps.write_comment.outputs.parse }}
           find: |
             \%0A\
           replace: |
